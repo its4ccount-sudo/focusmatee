@@ -1,0 +1,277 @@
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+
+    .screen{
+      display: none;
+    }
+      /*QOUTES na ramdoms*/
+      
+<html>
+<head>
+<style>
+.quoteimage {
+  background-image: url('SKY_20251111_122345.jpg');
+  background-size: cover;
+  position: relative;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 100px;
+  width: 1600;
+  height: 720;
+
+}
+/*#quotebaks{
+  width:350px;
+  height:300px;
+  padding:35px;
+  background-color:pink;
+  font-size:20px;
+  border-radius:15px;
+}
+  body{
+    margin:0;
+    padding:0;
+  }*/
+   
+
+
+
+    #introscreen, #mainscreen{
+      display: block;
+    }
+    
+    #marg {
+      margin-left: 215;
+      margin-top:5;
+  display: flex;
+    }
+      
+      #merg {
+      margin-left: 290;
+      margin-top:-100;
+  display: flex;
+    }
+    
+        
+    .introimage{
+      background-image: url('introbackground.png');
+      background-size: 100% 100%;
+      height: 100vh;
+      width: 100vw;
+    }
+    .mainimage{
+      background-image: url('mainbackground.png');
+      background-size: 100% 100%;
+      height: 100vh;
+      width: 100vw;
+    }
+      
+      /*notess di pa tapos*/
+    .notesimage{
+      background-image: url('notesbig.jpg');
+      background-size: 100% 100%;
+      height: 100vh;
+      width: 100vw;
+    }
+     #notesArea {
+    margin-top:10%;
+    margin-left:15%;
+    width: 60%;
+    height: 350px;
+    resize: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background-color: white;
+    line-height: 29px;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 28px,
+      black 29px
+    );
+   }
+      .musicimage{
+      background-image: url('musicbig.jpg');
+      background-size: 100% 100%;
+      height: 100vh;
+      width: 100vw;
+      }
+      
+     .musicbut{
+       cursor:pointer;
+       margin:0;
+      width:100;
+      height:auto;
+     }
+  
+  </style>
+</head>
+
+<body>
+  
+  
+    
+<div class="introimage" id="introscreen">
+  <h1>FOCUSmate</h1>
+  <img src="introbut.png" onclick="start()" style="cursor:pointer;">
+</div>
+
+
+<div class="mainimage" id="mainscreen" style="display:none;">  
+  <h2>Home</h2>
+  <body onload="fnctbox()" >
+    <div id="quotebaks">
+      <span id="quote"></span>
+    </div>
+
+  <img src="Review.png" onclick="openReview()" style="cursor:pointer;" id="marg">
+  <img src="music.png" onclick="openMusic()" style="cursor:pointer;" id="marg">
+  <img src="Notes.png" onclick="openNotes()" style="cursor:pointer;" id="marg">
+  <img src="Todo.png" onclick="openTodo()" style="cursor:pointer;" id="marg">
+  <img src="Calendar.png" onclick="openCalendar()" style="cursor:pointer;"id="merg">
+  <img src="Tracker.png" onclick="openTracker()" style="cursor:pointer;" id="merg">
+</div>
+
+  
+<div class="screenReview" id="screenReview">
+  <h2>Review</h2>
+  <p>Review content here</p>
+  <button onclick="backHome()">Back</button>
+</div>
+
+
+<div class="musicimage" id="screenMusic">
+  <h2>Music</h2>
+  <img src="musicbut1.png" class="musicbut" onclick="playMusic1()">
+  <img src="musicbut2.png" class="musicbut" onclick="playMusic2()">
+  <audio id="bgm" loop></audio>
+    
+  <img src="but.png" onclick="backHome()" style="cursor:pointer;">
+</div>
+
+  
+<div class="notesimage" id="screenNotes">
+  <h2>Notes</h2>
+  <div id="mainTable">
+  </div>
+ <textarea id="notesArea" placeholder="Type your notes here..."></textarea>
+ </textarea>
+  <br>
+  <img src="but.png" onclick="backHome()" style="cursor:pointer;">
+</div>
+
+
+<div class="screenTodo" id="screenTodo">
+  <h2>To-Do List</h2>
+  <p>To-do feature here</p>
+  <button onclick="backHome()">Back</button>
+</div>
+
+
+<div class="screenCalendar" id="screenCalendar">
+  <h2>Calendar</h2>
+  <p>Calendar here</p>
+  <button onclick="backHome()">Back</button>
+</div>
+
+
+<div class="screenTracker" id="screenTracker">
+  <h2>Study Tracker</h2>
+  <p>Study progress here</p>
+  <button onclick="backHome()">Back</button>
+</div>
+
+
+</body>
+</html>
+<script>
+  
+
+function hideAllScreens(){
+  mainscreen.style.display = "none";
+  screenReview.style.display = "none";
+  screenMusic.style.display = "none";
+  screenNotes.style.display = "none";
+  screenTodo.style.display = "none";
+  screenCalendar.style.display = "none";
+  screenTracker.style.display = "none";
+}
+
+function start(){
+  introscreen.style.display = "none";
+  hideAllScreens();
+  mainscreen.style.display = "block";
+}
+
+function openReview(){
+  hideAllScreens();
+  screenReview.style.display = "block";
+}
+
+function openMusic(){
+  hideAllScreens();
+  screenMusic.style.display = "block";
+}
+
+function openNotes(){
+  hideAllScreens();
+  screenNotes.style.display = "block";
+}
+
+function openTodo(){
+  hideAllScreens();
+  screenTodo.style.display = "block";
+}
+
+function openCalendar(){
+  hideAllScreens();
+  screenCalendar.style.display = "block";
+}
+
+function openTracker(){
+  hideAllScreens();
+  screenTracker.style.display = "block";
+}
+
+function backHome(){
+  hideAllScreens();
+  mainscreen.style.display = "block";
+}
+  
+function fnctbox(){
+  var quotes = [
+    "Trust God with all your heart.",
+    "Do not give up, God is with you.",
+    "Pray first before anything else.",
+    "God's timing is always perfect.",
+    "Faith over fear."
+  ];
+  var random = Math.floor(Math.random() * quotes.length);
+  document.getElementById("quote").innerHTML = quotes[random];
+  
+}
+      
+  const bgm = document.getElementById("bgm");
+
+  document.addEventListener("click", function autoPlay() {
+    bgm.src = "music1.mp3";
+    bgm.play();
+    document.removeEventListener("click", autoPlay);
+  });
+
+  function playMusic1() {
+    bgm.src = "music1.mp3";
+    bgm.play();
+  }
+
+  function playMusic2() {
+    bgm.src = "music3.mp3";
+    bgm.play();
+  }
+</script>
